@@ -1,0 +1,25 @@
+* Outliner
+Text text text
+** more items
+** yet more
+* Markup
+*Bold*, /Italic/, =verbatim=, +strikethrough+.
+
+- Bulleted
+- List
+- Items
+
+[[www.google.com][googs]]
+
+[[file:ger1.org::*Family business::**Watch concert of your kid in school][Watch concert]]
+
+* Tables
+| Some | Data           |
+|------+----------------|
+|   12 | buckle my shoe |
+|   34 | shut the door  |
+
+* Export to other formats
+
+#+TITLE: A Gentle Introduction to Org-modee
+#+OPTIOnS:

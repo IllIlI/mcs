@@ -1,0 +1,16 @@
+
+Dec 25, 2017 20:11:15.79 NEW SESSION
+Dec 25, 2017 20:11:15.79 1514261475784	addons.xpi	WARN	Add-on langpack-en-GB@firefox.mozilla.org is not compatible with application version.
+Dec 25, 2017 20:11:15.80 1514261475805	addons.xpi	WARN	Add-on langpack-en-ZA@firefox.mozilla.org is not compatible with application version.
+Dec 25, 2017 20:11:18.63 1514261478637	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Dec 25, 2017 20:11:20.11 1514261480113	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+Dec 25, 2017 20:11:21.04 1514261481041	addons.update-checker	WARN	Update manifest for disable-cert-transparency@mozilla.org did not contain an updates property
+Dec 25, 2017 20:11:21.14 1514261481146	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+Dec 25, 2017 20:11:22.88 1514261482885	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+Dec 25, 2017 20:11:23.19 1514261483191	addons.update-checker	WARN	Update manifest for disable-prefetch@mozilla.org did not contain an updates property
+Dec 25, 2017 20:11:25.96 1514261485967	addons.update-checker	WARN	Update manifest for deployment-checker@mozilla.org did not contain an updates property
+Dec 25, 2017 20:11:26.32 1514261486329	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+Dec 25, 2017 20:13:24.60 1514261604601	addons.xpi	WARN	Add-on langpack-en-GB@firefox.mozilla.org is not compatible with application version.
+Dec 25, 2017 20:13:24.60 1514261604605	addons.xpi	WARN	Add-on langpack-en-ZA@firefox.mozilla.org is not compatible with application version.
+Dec 25, 2017 20:15:07.17 1514261707176	addons.xpi	WARN	Add-on langpack-en-GB@firefox.mozilla.org is not compatible with application version.
+Dec 25, 2017 20:15:07.17 1514261707179	addons.xpi	WARN	Add-on langpack-en-ZA@firefox.mozilla.org is not compatible with application version.

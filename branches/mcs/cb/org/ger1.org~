@@ -1,0 +1,8 @@
+* Номер один
+  
+** Номер два
+
+#+begin_src emacs-lisp
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
++end_src

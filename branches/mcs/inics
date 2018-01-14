@@ -1,0 +1,136 @@
+(package-initialize)
+
+;; Package manager
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
+(define-key global-map "\C-ca" 'org-agenda)
+(setq exec-path (cons "/usr/local/git/libexec/git-core/" exec-path))
+
+;; (require 'undo-tree)
+;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+;; (add-to-list 'package-archive '("org" . "http://orgmode.org/elpal")t)
+
+;; Общие настройки клиента
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+(toggle-scroll-bar -1)
+
+;; емаксная версия вундела; только не ясно как использовать i nahuia ona nuzshna
+;;(unless (require 'el-get nil t)
+;;   (url-retrieve
+;;      "https://row.github.com/dimitri/el-get/master/el-get-install.el"
+;;      (lambda(s)
+;;         (end-of-buffer)
+;;         (eval-print-last-sexp))))
+
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
+;; относительное нумерование строк
+;;(use-package nlinum-relative
+;;             :config
+;;             ;; something else you want
+;;             (nlinum-relative-setup-evil)
+;;             (add-hook 'prog-mode-hook 'nlinum-relative-mode))
+
+;; if you use el-get
+;; (el-get-bundle kriyative/highlight-focus)
+
+;; if you use use-package
+;;(use-package highlight-focus
+;;  :config
+;;  ;; set the background of the mode-line
+;;  (setq highlight-focus:face 'mode-line
+;;        highlight-focus:face-property :background
+;;        highlight-focus:face-property-value "darkgreen"))
+
+;; -*- mode: elisp -*-
+
+;; Disable the splash screen (to enable it again, replace the t with 0)
+(setq inhibit-splash-screen t)
+
+;; Enable transient mark mode
+(transient-mark-mode 1)
+
+;;;; Org mode configuration
+;; Enable Org mode
+(require 'org)
+;; Mark Org mode work with files ending in .org
+;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; The above is the default in recent emacsen
+
+(add-to-list 'load-path "~/.emacs.d/orgdir/lisp")
+
+;; Nord theme
+(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/")
+
+(load-theme 'nord t)
+
+
+;; Multi-web-mode for proper JS indentation inside .HTML files
+(require 'multi-web-mode)
+(setq mweb-default-major-mode 'html-mode)
+(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+                  (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+(multi-web-global-mode 1)
+
+(require 'color-theme)
+
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; Better imenu
+(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+(require 'js2-refactor)
+(require 'xref-js2)
+
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c C-r")
+(define-key js2-mode-map (kbd "C-k") #'js2r-kill)
+
+;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so
+;; unbind it.
+(define-key js-mode-map (kbd "M-.") nil)
+
+(add-hook 'js2-mode-hook (lambda ()
+ (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+
+(require 'company)
+(require 'company-tern)
+
+(add-to-list 'company-backends 'company-tern)
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
+
+;; Disable completion keybindings, as we use xref-js2 instead
+(define-key tern-mode-keymap (kbd "M-.") nil)
+(define-key tern-mode-keymap (kbd "M-,") nil
+
+
+;; JS linting lines
+(add-to-list 'load-path "~/path/to/lintnode")
+(require 'flymake-jslint)
+;; Make sure we can find the lintnode executable
+(setq lintnode-location "~/path/to/lintnode")
+;; JSLint can be... opinionated
+(setq lintnode-jslint-excludes (list 'nomen 'undef 'plusplus 'onevar 'white))
+;; Start the server when we first open a js file and start checking
+(add-hook 'js-mode-hook
+          (lambda ()
+            (lintnode-hook)))(add-to-list 'load-path "~/path/to/lintnode")
+(require 'flymake-jslint)
+;; Make sure we can find the lintnode executable
+(setq lintnode-location "~/path/to/lintnode")
+;; JSLint can be... opinionated
+(setq lintnode-jslint-excludes (list 'nomen 'undef 'plusplus 'onevar 'white))
+;; Start the server when we first open a js file and start checking
+(add-hook 'js-mode-hook
+          (lambda ()
+            (lintnode-hook)))
+

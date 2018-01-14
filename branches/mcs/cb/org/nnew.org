@@ -1,0 +1,26 @@
+* Занятие программингом
+  
+** Языковой синтакс
+   
+*** JavaScript
+
+**** Ванильный
+    1) Anything that starts with "on" is an event handler. ondclick, onChange, etc.
+    2) functions
+**** jQuery
+**** Underslash
+*** SQL
+*** C#, C++, etc.
+
+** Всевозможные программы
+   
+*** Qutebrowser
+*** Emacs
+**** Plugins/Packages
+*** Vim
+**** Comboing
+
+** Логика программирования
+   
+*** Паттерны
+*** Анти-паттерны
